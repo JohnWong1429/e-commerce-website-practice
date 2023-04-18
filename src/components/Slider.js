@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import '../styles/Slider.css';
-import slider1 from '../images/image2.png';
-import slider2 from '../images/image4.png';
-import slider3 from '../images/image5.png';
+
 
 const Slider = () => {
     const [currentSlider, setCurrentSlider] = useState(0);
 
-    const data = [slider1, slider2, slider3,];
+    const data = [
+        'https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600',
+        'https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600',
+        'https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    ];
 
     const prevSlide = () => {
         setCurrentSlider(currentSlider === 0 ? 2 : (prev) => prev - 1);
