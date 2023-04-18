@@ -6,6 +6,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import '../styles/NavBar.css';
 
 
+
 const NavBar = () => {
     const [click, setClick] = useState(false);
 

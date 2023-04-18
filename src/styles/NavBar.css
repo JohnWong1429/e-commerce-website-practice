@@ -20,7 +20,7 @@
 }
 
 .nav-logo {
-    color: black;
+    color: rgb(228, 151, 8);
     justify-self: start;
     margin-left: 20px;
     text-decoration: none;
@@ -32,6 +32,7 @@
 }
 
 .crown {
+    color: rgb(228, 151, 8);
     margin-left: 0.5rem;
     font-size: 1.8rem;
 }
@@ -63,6 +64,10 @@
 .nav-links:hover {
     border-bottom: 5px solid #000;
     transition: all 0.2s ease-out;
+}
+
+.nav-links.target {
+    border-bottom: 5px solid #000;
 }
 
 
