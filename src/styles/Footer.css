@@ -94,6 +94,21 @@
     height: 50px;
 }
 
+.footer .bottom .left .facebook {
+    color: #3b5998;
+}
+
+.footer .bottom .left .youtube {
+    color: #FF0000;
+}
+
+.footer .bottom .left .twitter {
+    color: #00acee;
+}
+
+.footer .bottom .left .linkedin {
+    color: #0072b1 ;
+}
 
 @media screen and (max-width: 820px) {
     .footer .top {
