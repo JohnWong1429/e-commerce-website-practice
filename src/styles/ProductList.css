@@ -1,0 +1,22 @@
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+@media screen and (max-width: 1300px) {
+    .productList {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .productList {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        justify-content: center;
+    }
+}

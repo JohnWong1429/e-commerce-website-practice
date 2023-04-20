@@ -1,0 +1,50 @@
+.filter {
+    padding-left: 50px;
+    min-width: 200px;
+}
+
+.filter .filterItem {
+    margin-bottom: 30px;
+}
+
+.search-input {
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.filter-categories {
+    margin: 5px 0;
+}
+
+.filter-sortBy {
+    margin: 5px 0;
+}
+
+.filter .filterItem h2 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.filter .filterItem label {
+    margin-left: 7px;
+}
+
+.show-filter-btn {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .filter {
+        padding: 0;
+    }   
+}
+
+@media screen and (max-width: 600px) {
+    .filter {
+        margin-bottom: 10px;
+    }
+    
+    .filter .filterItem {
+        margin-bottom: 5px;
+    }
+}

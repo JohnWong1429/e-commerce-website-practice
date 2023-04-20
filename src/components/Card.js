@@ -6,7 +6,7 @@ const Card = ({ item }) => {
     const { img, img2, title, isNew, oldPrice, price, id } = item;
 
     return (
-        <Link to={`/products/${id}`} className='card-link'>
+        <Link to={`/product/${id}`} className='card-link'>
             <div className='card'>
                 <div className="card-img">
                     {isNew && <span className='card-new'>New Season</span>}

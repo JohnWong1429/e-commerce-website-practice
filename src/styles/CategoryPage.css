@@ -1,0 +1,48 @@
+.category-page {
+    padding: 30px 30px;
+    display: flex;
+}
+
+.category-page .left {
+    flex: 1;
+    position: sticky;
+    height: 100%;
+    top: 130px;
+}
+
+.category-page .right {
+    flex: 3;
+}
+
+.category-page-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 50px;
+}
+
+.filter-new-season {
+    margin-top: 30px;
+}
+
+.category-page .left .filter-btn {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .category-page-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .category-page {
+        flex-direction: column;
+    }
+
+    .category-page .left {
+        position: static;
+        display: flex;
+        justify-content: center;
+    }    
+}

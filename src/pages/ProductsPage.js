@@ -1,6 +1,10 @@
 import React from 'react';
+import '../styles/ProductsPage.css';
 
-const Products = () => {
+
+
+const ProductsPage = () => {
+
     return (
         <div>
             Products
@@ -8,4 +12,4 @@ const Products = () => {
     );
 }
 
-export default Products;
+export default ProductsPage;
