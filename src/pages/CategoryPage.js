@@ -15,11 +15,9 @@ const CategoryPage = () => {
                     <Filter />
                 </div>
                 <div className="right">
-                    <img 
-                        className='category-page-img' 
-                        src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-                        alt="category" 
-                    />
+                    <div className='productList-title'>
+                        <div className='products-amount'>4 Products Found</div>
+                    </div>
                     <ProductList />
                 </div>
             </div>

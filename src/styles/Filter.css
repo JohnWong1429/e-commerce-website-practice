@@ -9,7 +9,10 @@
 
 .search-input {
     padding: 7px;
-    border-radius: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(240, 240, 240);
+    width: 190px;
 }
 
 .filter-categories {
@@ -21,16 +24,32 @@
 }
 
 .filter .filterItem h2 {
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 10px;
+    color: rgb(47, 51, 61);
 }
 
 .filter .filterItem label {
     margin-left: 7px;
 }
 
-.show-filter-btn {
-    display: none;
+.filter-new-season {
+    margin-top: 30px;
+}
+
+.clear-filter-btn {
+    background-color: rgb(209, 50, 50);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.clear-filter-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 black;
 }
 
 @media screen and (max-width: 1200px) {
@@ -47,4 +66,8 @@
     .filter .filterItem {
         margin-bottom: 5px;
     }
+
+    .filter-new-season {
+        margin-bottom: 30px;
+    }    
 }
