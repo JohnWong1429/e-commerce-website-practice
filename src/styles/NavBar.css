@@ -105,6 +105,10 @@
     display: none;
 }
 
+.nav-icons .icon {
+    color: black;
+}
+
 @media screen and (max-width: 960px) {
     .navbar-menu {
         display: flex;

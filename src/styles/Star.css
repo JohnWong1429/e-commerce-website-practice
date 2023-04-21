@@ -1,0 +1,13 @@
+.star {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    color: orange;
+    margin-right: 5px;
+}
+
+.stars span {
+    margin: 0 1px;
+}

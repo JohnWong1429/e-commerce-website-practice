@@ -8,6 +8,7 @@ import {
   SingleProduct,
   Category,
   Contact,
+  Cart,
 } from './pages';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -23,6 +24,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/products' element={<Products />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/cart' element={<Cart />} />
         <Route path='/product/:id' element={<SingleProduct />} />
         <Route path='/products/:id' element={<Category />} />
         <Route path='/*' element={<Error />} />

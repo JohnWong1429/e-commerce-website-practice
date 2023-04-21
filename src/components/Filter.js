@@ -140,8 +140,21 @@ const Filter = () => {
                         <label htmlFor='new_season'>Only New Season</label>
                     </div>
                 </div>
+                {/* new season end */}
+                {/* discount start */}
+                <div className="filterItem">
+                    <div className="filter-discount">
+                        <input 
+                            type='checkbox' 
+                            name='discount' 
+                            id='discount' 
+                            value='discount'
+                        />
+                        <label htmlFor='discount'>Only Discount</label>
+                    </div>
+                </div>
             </form>
-            {/* new season end */}
+            {/* discount end */}
             <button type='button' className='clear-filter-btn'>
                 Clear All
             </button>

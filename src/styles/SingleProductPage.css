@@ -1,0 +1,24 @@
+.single-product-page {
+    display: flex;
+    gap: 50px;
+    padding: 20px 50px;
+}
+
+.single-product-page .left {
+    flex: 1;
+}
+
+.single-product-page .right {
+    flex: 1;
+    padding: 15px;
+}
+
+@media screen and (max-width: 992px) {
+    .single-product-page {
+        flex-direction: column;
+    }
+    
+    .single-product-page .right {
+        padding-top: 0;
+    }
+}

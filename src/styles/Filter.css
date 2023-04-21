@@ -37,6 +37,10 @@
     margin-top: 30px;
 }
 
+.filter-discount {
+    margin-top: -25px;
+}
+
 .clear-filter-btn {
     background-color: rgb(209, 50, 50);
     color: white;
@@ -67,7 +71,8 @@
         margin-bottom: 5px;
     }
 
-    .filter-new-season {
+    .filter-discount {
         margin-bottom: 30px;
+        margin-top: 0;
     }    
 }

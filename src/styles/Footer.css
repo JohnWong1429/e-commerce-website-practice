@@ -74,13 +74,14 @@
     display: flex;
     align-self: center;
     margin-bottom: 16px;
+    align-items: center;
 }
 
 .copyright {
     margin-bottom: 16px;
 }
 
-.fa-crown {
+.crown {
     color: rgb(228, 151, 8);
     margin-left: 6px;
 }

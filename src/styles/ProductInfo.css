@@ -1,0 +1,51 @@
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-info .price {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.product-info p {
+    text-align: justify;
+    color: gray;
+}
+
+.product-info .info {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    align-items: center;
+}
+
+.product-info .info {
+    font-size: 20px;
+}
+
+.product-info .info span {
+    font-weight: 500;
+}
+
+.product-info .info select {
+    width: 80px
+}
+
+.product-info .add-cart button {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 30px;
+    box-shadow: 2px 2px 2px black;
+    background-color: bisque;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.product-info .add-cart button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0;   
+}

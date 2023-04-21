@@ -29,10 +29,12 @@ const NavBar = () => {
                     ))}
                 </ul>
                 <div className="nav-icons">
-                    <div className="nav-cartIcon">
-                        <AiOutlineShoppingCart />
-                        <span>0</span>
-                    </div>
+                    <Link to='/cart' className='icon'>
+                        <div className="nav-cartIcon">
+                            <AiOutlineShoppingCart />
+                            <span>0</span>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

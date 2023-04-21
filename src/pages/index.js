@@ -5,6 +5,7 @@ import Products from "./ProductsPage";
 import SingleProduct from "./SingleProductPage";
 import Category from "./CategoryPage";
 import Contact from "./ContactPage";
+import Cart from "./CartPage";
 
 export {
     Home,
@@ -14,4 +15,5 @@ export {
     SingleProduct,
     Category,
     Contact,
+    Cart,
 };

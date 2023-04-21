@@ -43,8 +43,8 @@
 }
 
 .card h2 {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .card-price {
@@ -60,4 +60,9 @@
 .card-price .oldprice {
     text-decoration: line-through;
     color: gray;
+}
+
+.card-price .price {
+    color: rgb(63, 204, 63);
+    font-size: 24px;
 }

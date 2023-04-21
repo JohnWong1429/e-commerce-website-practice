@@ -2,6 +2,7 @@ import React from 'react';
 import payment from '../images/payment.png';
 import '../styles/Footer.css';
 import { Link } from 'react-router-dom';
+import { FaCrown } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -44,7 +45,7 @@ const Footer = () => {
                 <div className="left">
                     <div className="logo">
                         <Link to='/' className='social-logo'>
-                            RIW <i className="fa fa-crown"></i>
+                            RIW <FaCrown className="crown" />
                         </Link>
                     </div>
                     <small className="copyright">
