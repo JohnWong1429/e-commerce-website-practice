@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Filter from '../components/Filter';
 import ProductList from '../components/ProductList';
 import '../styles/CategoryPage.css';
-import { useParams } from 'react-router-dom';
 
 
 const CategoryPage = () => {

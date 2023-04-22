@@ -1,0 +1,20 @@
+.back-btn {
+    margin: 30px 0 20px 70px;
+}
+
+.back-btn button {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    background-color: bisque;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.back-btn button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0;   
+}
