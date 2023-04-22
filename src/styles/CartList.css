@@ -1,0 +1,8 @@
+.cart-list {
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgba(211, 211, 211, 0.7);
+}
+
+.cart-list ul {
+    list-style: none;
+}

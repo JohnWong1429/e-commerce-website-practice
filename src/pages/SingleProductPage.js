@@ -8,7 +8,9 @@ const SingleProductPage = () => {
     return (
         <>
             <div className='back'>
-                <BackButton />
+                <BackButton>
+                    Back
+                </BackButton>
             </div>
             <div className='single-product-page'>
                 <div className="left">

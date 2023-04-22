@@ -2,7 +2,7 @@
     display: grid;
     align-items: center;
     text-align: center;
-    grid-template-columns: repeat(3, 70px);
+    grid-template-columns: repeat(3, 50px);
 }
 
 .amount-btn button {

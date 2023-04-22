@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/BackButton.css';
 
-const BackButton = () => {
+const BackButton = ({ children }) => {
     const navigate = useNavigate();
 
     const back = () => {
@@ -12,7 +12,9 @@ const BackButton = () => {
 
     return (
         <div className='back-btn'>
-            <button onClick={back}>Back</button>
+            <button onClick={back}>
+                {children}
+            </button>
         </div>
     );
 }

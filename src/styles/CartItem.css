@@ -1,0 +1,90 @@
+.cart-item {
+    display: grid;
+    grid-template-columns: 300px 270px 270px 270px auto;
+    align-items: center;
+    justify-items: center;
+    margin: 10px 0;
+    grid-template-rows: 140px;
+}
+
+.item-name {
+    display: grid;
+    grid-template-columns: 90px 200px;
+    align-items: center;
+}
+
+.item-name .title {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name span {
+    font-weight: 500;
+}
+
+.item-name .title .price {
+    display: none;
+    color: dodgerblue;
+}
+
+.item-name .title small {
+    color: gray;
+}
+
+.item-name img {
+    width: 80px;
+    height: 120px;
+}
+
+.item-price {
+    font-size: 20px;
+    color: dodgerblue;
+}
+
+.item-subtotal {
+    font-size: 20px;
+    color: gray;
+}
+
+.item-delete button {
+    border: none;
+    color: red;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.item-delete button:hover {
+    color: rgb(143, 29, 29);
+}
+
+@media screen and (max-width: 1200px) {
+    .cart-item {
+        grid-template-columns: 300px 200px 200px 200px auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .cart-item{
+        grid-template-columns: 400px 280px auto;
+    }
+
+    .item-name .title .price {
+        display: block;
+    }
+
+    .item-price {
+        display: none;
+    }
+
+    .item-subtotal {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cart-item{
+        grid-template-columns: 300px 150px auto;
+    }
+}
