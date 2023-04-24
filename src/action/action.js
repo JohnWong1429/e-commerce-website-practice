@@ -1,11 +1,16 @@
+// products //
 export const GET_PRODUCTS_BEGIN = 'GET_PRODUCTS_BEGIN';
 export const GET_PRODUCTS_SUCCESS = 'GET_PRODUCTS_SUCCESS';
 export const GET_PRODUCTS_ERROR = 'GET_PRODUCTS_ERROR';
+
+// cart //
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 export const TOGGLE_CART_ITEM_AMOUNT = 'TOGGLE_CART_ITEM_AMOUNT';
 export const CLEAR_CART = 'CLEAR_CART';
 export const COUNT_CART_TOTALS = 'COUNT_CART_TOTALS';
+
+// filter //
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
 export const UPDATE_SORT = 'UPDATE_SORT';
 export const SORT_PRODUCTS = 'SORT_PRODUCTS';
