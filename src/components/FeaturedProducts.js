@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Card from './Card';
 import '../styles/FeaturedProducts.css';
-import { ProductsContext } from '../context/products_context';
+import useFetch from '../hooks/useFetch';
 
 const FeaturedProducts = ({ type }) => {
-    const { products } = useContext(ProductsContext);
 
-    const product = products.data;
-
-    console.log(product);
+    const { data, loading, error } = useFetch(
+        `/products?populate=*&[filters][type][$eq]=${type}`
+    );
 
     return (
         <div className='featuredProducts'>
@@ -26,7 +25,7 @@ const FeaturedProducts = ({ type }) => {
                 </div>
             </div>
             <div className="feature-bottom">
-                {product?.map(item => (
+                {data?.map(item => (
                     <Card item={item.attributes} key={item.id} />
                 ))}
             </div>

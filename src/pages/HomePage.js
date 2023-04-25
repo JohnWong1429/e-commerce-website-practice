@@ -8,9 +8,9 @@ const HomePage = () => {
     return (
         <main>
             <Slider />
-            <FeaturedProducts type='featured' />
+            <FeaturedProducts type={'featured'} />
             <Categories />
-            <FeaturedProducts type='trending' />
+            <FeaturedProducts type={'trending'} />
             <Contact />
         </main>
     );
