@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import Card from './Card';
 import '../styles/FeaturedProducts.css';
-import { data } from '../utils/example';
 import { ProductsContext } from '../context/products_context';
 
 const FeaturedProducts = ({ type }) => {
     const { products } = useContext(ProductsContext);
 
-    console.log(products);
+    const product = products.data;
+
+    console.log(product);
 
     return (
         <div className='featuredProducts'>
@@ -25,8 +26,8 @@ const FeaturedProducts = ({ type }) => {
                 </div>
             </div>
             <div className="feature-bottom">
-                {data.map(item => (
-                    <Card item={item} key={item.id} />
+                {product?.map(item => (
+                    <Card item={item.attributes} key={item.id} />
                 ))}
             </div>
         </div>

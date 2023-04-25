@@ -13,17 +13,21 @@ const initialState = {
     error: false,
 }
 
+const API_URL = process.env.REACT_APP_API_URL;
+const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+const url = API_URL + '/products?populate=*';
+
 export const ProductsContext = createContext(initialState);
 
 export const ProductsProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const fetchProducts = async () => {
+    const fetchProducts = async (url) => {
         dispatch({ type: GET_PRODUCTS_BEGIN });
         try {
-            const response = await axios.get(process.env.REACT_APP_API_URL + '/products?populate=*', {
+            const response = await axios.get(url, {
                 headers: {
-                    Authorization: 'bearer ' + process.env.REACT_APP_API_TOKEN,
+                    Authorization: 'Bearer ' + API_TOKEN,
                 },
             });
             const data = response.data;
@@ -35,13 +39,15 @@ export const ProductsProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        fetchProducts();
+        fetchProducts(url);
     }, []);
 
 
     return (
         <ProductsContext.Provider value={{
-            ...state,
+            products: state.products,
+            loading: state.loading,
+            error: state.error,
         }}>
             {children}
         </ProductsContext.Provider>
