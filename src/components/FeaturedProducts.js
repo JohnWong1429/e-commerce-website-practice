@@ -17,7 +17,7 @@ const FeaturedProducts = ({ type }) => {
                 </div>
                 <div className="description">
                     <p>
-                        Featured clothes are the latest and most popular 
+                        These clothes are the latest and most popular 
                         fashion items that are highlighted by designers and 
                         fashion experts. These clothes are often showcased in 
                         fashion shows, magazines, and online stores. 
@@ -25,7 +25,11 @@ const FeaturedProducts = ({ type }) => {
                 </div>
             </div>
             <div className="feature-bottom">
-                {data?.map(item => (
+                {error 
+                    ? 'Something went wrong!' 
+                    : loading 
+                    ? 'Loading...' 
+                    : data?.map(item => (
                     <Card item={item.attributes} key={item.id} />
                 ))}
             </div>
