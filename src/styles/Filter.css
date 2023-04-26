@@ -1,6 +1,9 @@
 .filter {
-    padding-left: 50px;
+    padding: 10px 0 10px 50px;
+    margin-right: 20%;
     min-width: 200px;
+    height: 570px;
+    overflow-y: scroll;
 }
 
 .filter .filterItem {
@@ -56,15 +59,22 @@
     box-shadow: 0 0 black;
 }
 
+@media screen and (max-width: 1600px) {
+    .filter {
+        margin-right: 10px;
+    }   
+}
+
 @media screen and (max-width: 1200px) {
     .filter {
-        padding: 0;
+        padding: 10px 0;
     }   
 }
 
 @media screen and (max-width: 600px) {
     .filter {
         margin-bottom: 10px;
+        height: 350px;
     }
     
     .filter .filterItem {

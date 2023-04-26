@@ -30,7 +30,7 @@ const FeaturedProducts = ({ type }) => {
                     : loading 
                     ? 'Loading...' 
                     : data?.map(item => (
-                    <Card item={item.attributes} key={item.id} />
+                    <Card item={item} key={item.id} />
                 ))}
             </div>
         </div>

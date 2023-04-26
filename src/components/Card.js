@@ -3,11 +3,12 @@ import '../styles/Card.css';
 import { Link } from 'react-router-dom';
 
 const Card = ({ item }) => {
-    const { title, isNew, oldPrice, price, id } = item;
+    const { title, isNew, old_price, price, onSale } = item.attributes;
+    const { id } = item;
 
     const uploadURL = process.env.REACT_APP_UPLOAD_URL;
-    const imgURL = uploadURL + item?.img?.data?.attributes?.url;
-    const img2URL = uploadURL + item?.img2?.data?.attributes?.url;
+    const imgURL = uploadURL + item?.attributes?.img?.data?.attributes?.url;
+    const img2URL = uploadURL + item?.attributes?.img2?.data?.attributes?.url;
     
 
     return (
@@ -29,7 +30,7 @@ const Card = ({ item }) => {
             </Link>
             <h2>{title}</h2>
             <div className="card-price">
-                {oldPrice && <h3 className='oldprice'>${oldPrice.toFixed(2)}</h3>}
+                {onSale && <h3 className='oldprice'>${old_price.toFixed(2)}</h3>}
                 <h3 className='price'>${price.toFixed(2)}</h3>
             </div>
         </div>

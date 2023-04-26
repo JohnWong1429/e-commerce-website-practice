@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Card from './Card';
 import '../styles/ProductList.css';
-import useFetch from '../hooks/useFetch';
+import { FilterContext } from '../context/filter_context';
+
 
 const ProductList = () => {
-    const { data, loading, error } = useFetch(
-        '/products?populate=*'
-    )
+    const { filtered_products } = useContext(FilterContext);
 
     return (
         <div className='productList'>
-            {data?.map(item => (
-                <Card item={item.attributes} key={item.id} />
+            {filtered_products?.map(item => (
+                <Card item={item} key={item.id} />
             ))}
         </div>
     );

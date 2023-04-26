@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { makeRequest } from '../utils/makeRequest';
 
 const useFetch = (url) => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
@@ -12,7 +12,9 @@ const useFetch = (url) => {
         try {
             const response = await makeRequest.get(url);
             const res_data = response.data.data;
-            setData(res_data);
+            if (res_data.length) {
+                setData(res_data);
+            }
             setLoading(false);
         } catch (error) {
             console.log(error);

@@ -5,8 +5,6 @@ import '../styles/CategoryPage.css';
 
 
 const CategoryPage = () => {
-    
-
     return (
         <main>
             <div className="category-page">

@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/Filter.css';
+import useFetch from '../hooks/useFetch';
+import { useParams } from 'react-router-dom';
+import { FilterContext } from '../context/filter_context';
 
 const Filter = () => {
+    const {
+        filters: {
+            text,
+            department,
+            max_price,
+            min_price,
+            price,
+        },
+        updateFilters,
+    } = useContext(FilterContext);
+
+    const catId = parseInt(useParams().id);
+
+    const { data: catData } = useFetch(
+        `/sub-categories?[filters][categories][id][$eq]=${catId}`
+    );
+
+    const colors= ['red', 'green', 'blue', 'black', 'white'];
 
     return (
         <div className='filter'>
@@ -11,6 +32,8 @@ const Filter = () => {
                     <input 
                         type="text" 
                         name='text' 
+                        value={text}
+                        onChange={updateFilters}
                         placeholder='Search...' 
                         className='search-input' 
                     />
@@ -21,31 +44,27 @@ const Filter = () => {
                     <h2>Categories</h2>
                     <div className="filter-categories">
                         <input 
-                            type="checkbox" 
-                            id='hat' 
-                            name='hat' 
-                            value='hat' 
+                            type="radio" 
+                            id='all' 
+                            value='all'
+                            onChange={updateFilters}
+                            name='category'
+                            defaultChecked
                         />
-                        <label htmlFor='hat'>Hat</label>
+                        <label htmlFor='all'>All</label>
                     </div>
-                    <div className="filter-categories">
-                        <input 
-                            type="checkbox" 
-                            id='shoes' 
-                            name='shoes' 
-                            value='shoes' 
-                        />
-                        <label htmlFor='shoes'>Shoes</label>
-                    </div>
-                    <div className="filter-categories">
-                        <input 
-                            type="checkbox" 
-                            id='skirt'
-                            name='skirt' 
-                            value='skirt' 
-                        />
-                        <label htmlFor='skirt'>Skirts</label>
-                    </div>
+                    {catData?.map(item => (
+                        <div className="filter-categories" key={item.id}>
+                            <input 
+                                type="radio" 
+                                id={item.attributes.title} 
+                                value={item.attributes.title} 
+                                name='category'
+                                onChange={updateFilters}
+                            />
+                            <label htmlFor={item.attributes.title}>{item.attributes.title}</label>
+                        </div>
+                    ))}
                 </div>
                 {/* categories end */}
                 {/* colors start */}
@@ -53,48 +72,44 @@ const Filter = () => {
                     <h2>Colors</h2>
                     <div className="filter-colors">
                         <input 
-                            type="checkbox" 
+                            type="radio" 
                             id='all' 
-                            name='all' 
+                            name='color' 
                             value='all' 
+                            onChange={updateFilters}
+                            defaultChecked
                         />
                         <label htmlFor='all'>All</label>
                     </div>
-                    <div className="filter-colors">
+                    {colors.map((item, index) => (
+                    <div className="filter-colors" key={index}>
                         <input 
-                            type="checkbox" 
-                            id='red' 
-                            name='red' 
-                            value='red' 
+                            type="radio" 
+                            id={item} 
+                            name='color' 
+                            value={item} 
+                            onChange={updateFilters}
                         />
-                        <label htmlFor='red'>Red</label>
+                        <label htmlFor={item} style={{ textTransform: 'capitalize' }}>{item}</label>
                     </div>
-                    <div className="filter-colors">
-                        <input 
-                            type="checkbox" 
-                            id='blue'
-                            name='blue' 
-                            value='blue' 
-                        />
-                        <label htmlFor='blue'>Blue</label>
-                    </div>
+                    ))}
                 </div>
                 {/* colors end */}
                 {/* price start */}
                 <div className="filterItem">
                     <h2>Price</h2>
                     <div className="filter-price">
-                        <span>$0</span>
-                        {' '}
                         <input
                             type='range'
                             id='price'
                             name='price'
-                            min='0'
-                            max='9999'
+                            min={min_price}
+                            max={max_price}
+                            onChange={updateFilters}
+                            defaultValue={max_price}
                         />
                         {' '}
-                        <span>$9999</span>
+                        <span>${price.toFixed(2)}</span>
                     </div>
                 </div>
                 {/* price end */}
@@ -105,6 +120,8 @@ const Filter = () => {
                         <select
                             name='department'
                             className='select-form'
+                            value={department}
+                            onChange={updateFilters}
                         >
                             <option value='all'>All</option>
                             <option value='men'>Men</option>
@@ -133,9 +150,10 @@ const Filter = () => {
                     <div className="filter-new-season">
                         <input 
                             type='checkbox' 
-                            name='new_season' 
+                            name='isNew' 
                             id='new_season' 
                             value='new_season'
+                            onChange={updateFilters}
                         />
                         <label htmlFor='new_season'>Only New Season</label>
                     </div>
@@ -146,9 +164,10 @@ const Filter = () => {
                     <div className="filter-discount">
                         <input 
                             type='checkbox' 
-                            name='discount' 
+                            name='onSale' 
                             id='discount' 
                             value='discount'
+                            onChange={updateFilters}
                         />
                         <label htmlFor='discount'>Only Discount</label>
                     </div>
