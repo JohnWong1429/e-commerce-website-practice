@@ -24,6 +24,7 @@ const Filter = () => {
 
     const colors= ['red', 'green', 'blue', 'black', 'white'];
 
+
     return (
         <div className='filter'>
             {/* search start */}
@@ -44,19 +45,19 @@ const Filter = () => {
                     <h2>Categories</h2>
                     <div className="filter-categories">
                         <input 
-                            type="radio" 
-                            id='all' 
+                            type="checkbox" 
+                            id='cat_all' 
                             value='all'
                             onChange={updateFilters}
                             name='category'
                             defaultChecked
                         />
-                        <label htmlFor='all'>All</label>
+                        <label htmlFor='cat_all'>All</label>
                     </div>
                     {catData?.map(item => (
                         <div className="filter-categories" key={item.id}>
                             <input 
-                                type="radio" 
+                                type="checkbox" 
                                 id={item.attributes.title} 
                                 value={item.attributes.title} 
                                 name='category'
@@ -72,19 +73,19 @@ const Filter = () => {
                     <h2>Colors</h2>
                     <div className="filter-colors">
                         <input 
-                            type="radio" 
-                            id='all' 
+                            type="checkbox" 
+                            id='color_all' 
                             name='color' 
                             value='all' 
                             onChange={updateFilters}
                             defaultChecked
                         />
-                        <label htmlFor='all'>All</label>
+                        <label htmlFor='color_all'>All</label>
                     </div>
                     {colors.map((item, index) => (
                     <div className="filter-colors" key={index}>
                         <input 
-                            type="radio" 
+                            type="checkbox" 
                             id={item} 
                             name='color' 
                             value={item} 

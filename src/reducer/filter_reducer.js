@@ -38,7 +38,7 @@ const reducer = (state, action) => {
             const { text, category, color, department, price, isNew, onSale } = state.filters;
 
             let tempProducts = [...all_products];
-            console.log(state.filters.category);
+            console.log(state.filters.color);
 
             if (text) {
                 tempProducts = tempProducts.filter(product => {
@@ -46,15 +46,15 @@ const reducer = (state, action) => {
                 });
             }
 
-            if (category !== 'all') {
+            if (!category.includes('all')) {
                 tempProducts = tempProducts.filter(product => {
-                    return product?.attributes.sub_categories.data[0].attributes.title === category;
+                    return category.includes(product?.attributes.sub_categories.data[0].attributes.title);
                 });
             }
 
-            if (color !== 'all') {
+            if (!color.includes('all')) {
                 tempProducts = tempProducts.filter(product => {
-                    return product?.attributes.colors === color;
+                    return color.includes(product?.attributes.colors);
                 });
             }
 

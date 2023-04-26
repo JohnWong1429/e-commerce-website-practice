@@ -50,7 +50,17 @@ export const FilterProvider = ({ children }) => {
 
         if (name === 'category') {
             if (event.target.checked) {
-                value = event.target.value
+                value = state.filters.category.concat(' ', event.target.value);
+            } else {
+                value = state.filters.category.replace(event.target.value, '').trim();
+            }
+        }
+
+        if (name === 'color') {
+            if (event.target.checked) {
+                value = state.filters.color.concat(' ', event.target.value);
+            } else {
+                value = state.filters.color.replace(event.target.value, '').trim();
             }
         }
 
