@@ -48,6 +48,12 @@ export const FilterProvider = ({ children }) => {
         let name = event.target.name;
         let value = event.target.value;
 
+        if (name === 'category') {
+            if (event.target.checked) {
+                value = event.target.value
+            }
+        }
+
         if (name === 'price') {
             value = Number(value);
         }

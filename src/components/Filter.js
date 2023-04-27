@@ -27,7 +27,6 @@ const Filter = () => {
 
     const colors= ['red', 'green', 'blue', 'black', 'white'];
 
-
     return (
         <div className='filter'>
             {/* search start */}
