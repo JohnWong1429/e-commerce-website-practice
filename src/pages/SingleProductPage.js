@@ -3,8 +3,11 @@ import '../styles/SingleProductPage.css';
 import ProductImage from '../components/ProductImage';
 import ProductInfo from '../components/ProductInfo';
 import BackButton from '../components/BackButton';
+import { useParams } from 'react-router-dom';
 
 const SingleProductPage = () => {
+    const id = useParams().id;
+
     return (
         <>
             <div className='back'>
@@ -14,10 +17,10 @@ const SingleProductPage = () => {
             </div>
             <div className='single-product-page'>
                 <div className="left">
-                    <ProductImage />
+                    <ProductImage id={id} />
                 </div>
                 <div className="right">
-                    <ProductInfo />
+                    <ProductInfo id={id} />
                 </div>
             </div>
         </>

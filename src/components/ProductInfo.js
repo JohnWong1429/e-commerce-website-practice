@@ -4,13 +4,24 @@ import Star from './Star';
 import { VscCheck, VscChromeClose } from 'react-icons/vsc';
 import AmountButton from './AmountButton';
 import { Link } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
 
 
-const ProductInfo = () => {
+const ProductInfo = ({ id }) => {
+    const { data , loading } = useFetch(
+        `/products?populate=*&[filters][id][$eq]=${id}`
+    );
+
+    //const { title, price, old_price, onSale, isNew, description, stock } = data[0]?.attributes;
+    //const { department } = data[0]?.attributes?.categories?.data?.[0]?.attributes;
+    //const { categories } = data[0]?.attributes?.sub_categories?.data?.[0]?.attributes;
+
     const [amount, setAmount] = useState(1);
 
     const increase = () => {
-        setAmount(amount => amount + 1);
+        if (amount < data[0]?.attributes.stock) {
+            setAmount(amount => amount + 1);
+        }
     }
 
     const decrease = () => {
@@ -21,36 +32,32 @@ const ProductInfo = () => {
         }
     }
 
-
     return (
         <div className='product-info'>
-            <h2>Title</h2>
+            <h2>{data[0]?.attributes?.title}</h2>
             <Star stars={4.5} reviews={80} />
-            <span className='price'>$19.9</span>
+            <div className='price-info'>
+                <span className='price'>${data[0]?.attributes?.price.toFixed(2)}</span>
+                {data[0]?.attributes?.onSale && <span className='old-price'>${data[0]?.attributes?.old_price.toFixed(2)}</span>}
+            </div>
             <p>
-                What is a product description? A 
-                product description is the marketing
-                copy that explains what a product is and wh
-                y it's worth purchasing. The purpose of a p
-                roduct description is to supply customers with im
-                portant information about the features and key ben
-                efits of the product so they're compelled to buy.
+                {data[0]?.attributes?.description}
             </p>
             <div className="info">
                 <span>Categories : </span>
-                {'Shoes'}
+                {data[0]?.attributes?.sub_categories?.data?.[0]?.attributes?.title}
             </div>
             <div className="info">
                 <span>Department : </span>
-                {'Men'}
+                {data[0]?.attributes?.categories?.data?.[0]?.attributes?.title}
             </div>
             <div className="info">
                 <span>Available : </span>
-                {'In Stock'}
+                {data[0]?.attributes.stock}
             </div>
             <div className="info">
                 <span>New Season : </span>
-                <VscCheck />
+                {data[0]?.attributes.isNew ? <VscCheck /> : <VscChromeClose />}
             </div>
             <div className="info">
                 <span>Colors : </span>

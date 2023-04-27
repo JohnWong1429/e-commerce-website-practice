@@ -31,3 +31,8 @@ export const data = [
         price: 12,
     },
 ];
+
+export const images = [
+    'https://images.pexels.com/photos/10026492/pexels-photo-10026492.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    'https://images.pexels.com/photos/12179283/pexels-photo-12179283.jpeg?auto=compress&cs=tinysrgb&w=1600',
+];
