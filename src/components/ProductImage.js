@@ -3,7 +3,7 @@ import '../styles/ProductImage.css';
 import useFetch from '../hooks/useFetch';
 
 const ProductImage = ({ id }) => {
-    const { data , loading } = useFetch(
+    const { data , loading, error } = useFetch(
         `/products?populate=*&[filters][id][$eq]=${id}`
     );
 
@@ -22,27 +22,27 @@ const ProductImage = ({ id }) => {
 
     return (
         <div className='productImg'>
-            {loading ? (
+            {error ? (
+                'Something went wrong!'
+            ) : loading ? (
                 'Loading...'
             ) : (
-            <div className="img">
-                {images.map((img, index) => (
-                    <img
-                        src={img}
-                        alt=''
-                        key={index}
-                        onClick={() => setSelectedImage(index)}
-                        className={img === images[selectedImage] ? 'active' : null}
-                    />
-                ))}
-            </div>
-            )}
-            {loading ? (
-                'Loading...'
-            ) : (
-            <div className="main-img">
-                <img src={images[selectedImage]} alt="" />
-            </div>
+                <>
+                    <div className="img">
+                        {images.map((img, index) => (
+                            <img
+                                src={img}
+                                alt=''
+                                key={index}
+                                onClick={() => setSelectedImage(index)}
+                                className={img === images[selectedImage] ? 'active' : null}
+                            />
+                        ))}
+                    </div>
+                    <div className="main-img">
+                        <img src={images[selectedImage]} alt="" />
+                    </div>
+                </>
             )}
         </div>
     );
