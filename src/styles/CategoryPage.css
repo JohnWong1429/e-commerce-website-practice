@@ -14,6 +14,10 @@
     flex: 3;
 }
 
+.category-page .right h5 {
+    font-size: 20px;
+}
+
 .products-amount {
     display: flex;
     align-items: center;

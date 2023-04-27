@@ -17,7 +17,11 @@ const CategoryPage = () => {
                     <div className='productList-title'>
                         <div className='products-amount'>{filtered_products.length} Products Found</div>
                     </div>
-                    <ProductList />
+                    {filtered_products.length ? (
+                        <ProductList />
+                    ) : (
+                        <h5>Sorry, no products matched your search...</h5>
+                    )}
                 </div>
             </div>
         </main>

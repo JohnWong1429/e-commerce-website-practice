@@ -1,0 +1,17 @@
+.scroll-btn {
+    position: fixed;
+    width: 0;
+    right: 5%;
+    bottom: 20%;
+    height: 0;
+    font-size: 3.5em;
+    z-index: 99;
+    cursor: pointer;
+    color: rgb(106, 142, 221);
+}
+
+@media screen and (max-width: 1300px) {
+    .scroll-btn {
+        right: 100px;
+    }
+}

@@ -8,7 +8,7 @@ import useFetch from '../hooks/useFetch';
 
 
 const ProductInfo = ({ id }) => {
-    const { data , loading } = useFetch(
+    const { data } = useFetch(
         `/products?populate=*&[filters][id][$eq]=${id}`
     );
 
