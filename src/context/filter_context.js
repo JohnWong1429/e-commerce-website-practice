@@ -48,12 +48,6 @@ export const FilterProvider = ({ children }) => {
         let name = event.target.name;
         let value = event.target.value;
 
-        if (name === 'category') {
-            if (event.target.checked) {
-                value = event.target.value
-            }
-        }
-
         if (name === 'price') {
             value = Number(value);
         }
@@ -69,10 +63,15 @@ export const FilterProvider = ({ children }) => {
         dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
     };
 
+    const clearFilters = () => {
+        dispatch({ type: CLEAR_FILTERS });
+    }
+
     return (
         <FilterContext.Provider value={{
             ...state,
             updateFilters,
+            clearFilters,
         }}>
             {children}
         </FilterContext.Provider>

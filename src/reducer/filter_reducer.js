@@ -38,7 +38,7 @@ const reducer = (state, action) => {
             const { text, category, color, department, price, isNew, onSale } = state.filters;
 
             let tempProducts = [...all_products];
-            console.log(state.filters.category);
+            console.log(state.filters.color);
 
             if (text) {
                 tempProducts = tempProducts.filter(product => {
@@ -83,6 +83,19 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 filtered_products: tempProducts,
+            };
+        case CLEAR_FILTERS:
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    text: '',
+                    category: 'all',
+                    color: 'all',
+                    department: 'all',
+                    isNew: false,
+                    onSale: false,
+                },
             };
         default:
             return state;

@@ -8,12 +8,15 @@ const Filter = () => {
     const {
         filters: {
             text,
+            category,
+            color,
             department,
             max_price,
             min_price,
             price,
         },
         updateFilters,
+        clearFilters,
     } = useContext(FilterContext);
 
     const catId = parseInt(useParams().id);
@@ -23,6 +26,7 @@ const Filter = () => {
     );
 
     const colors= ['red', 'green', 'blue', 'black', 'white'];
+
 
     return (
         <div className='filter'>
@@ -44,25 +48,22 @@ const Filter = () => {
                     <h2>Categories</h2>
                     <div className="filter-categories">
                         <input 
-                            type="radio" 
-                            id='all' 
+                            type="button" 
                             value='all'
-                            onChange={updateFilters}
+                            onClick={updateFilters}
                             name='category'
-                            defaultChecked
+                            className={category === 'all' ? 'btn-category active' : 'btn-category'}
                         />
-                        <label htmlFor='all'>All</label>
                     </div>
                     {catData?.map(item => (
                         <div className="filter-categories" key={item.id}>
                             <input 
-                                type="radio" 
-                                id={item.attributes.title} 
+                                type="button" 
                                 value={item.attributes.title} 
                                 name='category'
-                                onChange={updateFilters}
+                                onClick={updateFilters}
+                                className={category === item.attributes.title ? 'btn-category active' : 'btn-category'}
                             />
-                            <label htmlFor={item.attributes.title}>{item.attributes.title}</label>
                         </div>
                     ))}
                 </div>
@@ -72,25 +73,23 @@ const Filter = () => {
                     <h2>Colors</h2>
                     <div className="filter-colors">
                         <input 
-                            type="radio" 
-                            id='all' 
+                            type="button" 
                             name='color' 
                             value='all' 
-                            onChange={updateFilters}
-                            defaultChecked
+                            onClick={updateFilters}
+                            className={color === 'all' ? 'btn-color active' : 'btn-color'}
                         />
-                        <label htmlFor='all'>All</label>
                     </div>
                     {colors.map((item, index) => (
                     <div className="filter-colors" key={index}>
                         <input 
-                            type="radio" 
+                            type="button" 
                             id={item} 
                             name='color' 
                             value={item} 
-                            onChange={updateFilters}
+                            onClick={updateFilters}
+                            className={color === item ? 'btn-color active' : 'btn-color'}
                         />
-                        <label htmlFor={item} style={{ textTransform: 'capitalize' }}>{item}</label>
                     </div>
                     ))}
                 </div>
@@ -169,7 +168,7 @@ const Filter = () => {
                             value='discount'
                             onChange={updateFilters}
                         />
-                        <label htmlFor='discount'>Only Discount</label>
+                        <label htmlFor='discount'>On Sale</label>
                     </div>
                 </div>
             </form>
