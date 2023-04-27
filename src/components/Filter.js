@@ -14,9 +14,12 @@ const Filter = () => {
             max_price,
             min_price,
             price,
+            isNew,
+            onSale,
         },
         updateFilters,
         clearFilters,
+        updateSorts,
     } = useContext(FilterContext);
 
     const catId = parseInt(useParams().id);
@@ -135,6 +138,7 @@ const Filter = () => {
                         name='sort'
                         className='sort-input'
                         id='sort'
+                        onChange={updateSorts}
                     >
                         <option value='price-lowest'>Price (lowest first)</option>
                         <option value='price-highest'>Price (highest first)</option>
@@ -152,6 +156,7 @@ const Filter = () => {
                             id='new_season' 
                             value='new_season'
                             onChange={updateFilters}
+                            checked={isNew}
                         />
                         <label htmlFor='new_season'>Only New Season</label>
                     </div>
@@ -166,13 +171,14 @@ const Filter = () => {
                             id='discount' 
                             value='discount'
                             onChange={updateFilters}
+                            checked={onSale}
                         />
                         <label htmlFor='discount'>On Sale</label>
                     </div>
                 </div>
             </form>
             {/* discount end */}
-            <button type='button' className='clear-filter-btn'>
+            <button type='button' className='clear-filter-btn' onClick={clearFilters}>
                 Clear All
             </button>
         </div>

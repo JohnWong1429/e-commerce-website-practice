@@ -73,11 +73,17 @@ export const FilterProvider = ({ children }) => {
         dispatch({ type: CLEAR_FILTERS });
     }
 
+    const updateSorts = (event) => {
+        let value = event.target.value;
+        dispatch({ type: UPDATE_SORT, payload: value });
+    }
+
     return (
         <FilterContext.Provider value={{
             ...state,
             updateFilters,
             clearFilters,
+            updateSorts,
         }}>
             {children}
         </FilterContext.Provider>
