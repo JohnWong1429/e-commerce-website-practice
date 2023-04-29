@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../styles/ProductInfo.css';
 import Star from './Star';
 import { VscCheck, VscChromeClose } from 'react-icons/vsc';
 import AmountButton from './AmountButton';
 import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
+import { CartContext } from '../context/cart_context';
 
 
 const ProductInfo = ({ id }) => {
@@ -12,9 +13,11 @@ const ProductInfo = ({ id }) => {
         `/products?populate=*&[filters][id][$eq]=${id}`
     );
 
+    const { addToCart } = useContext(CartContext);
+
     //const { title, price, old_price, onSale, isNew, description, stock } = data[0]?.attributes;
-    //const { department } = data[0]?.attributes?.categories?.data?.[0]?.attributes;
-    //const { categories } = data[0]?.attributes?.sub_categories?.data?.[0]?.attributes;
+    //const { department } = data[0]?.attributes?.categories?.data?.[0]?.attributes.title;
+    //const { categories } = data[0]?.attributes?.sub_categories?.data?.[0]?.attributes.title;
 
     const [amount, setAmount] = useState(1);
 
@@ -31,6 +34,18 @@ const ProductInfo = ({ id }) => {
             setAmount(amount => amount - 1);
         }
     }
+
+    const addCartItem = () => {
+        const title = data[0]?.attributes?.title;
+        const color = data[0]?.attributes.colors;
+        const img = process.env.REACT_APP_UPLOAD_URL + data[0]?.attributes?.img?.data?.attributes?.url;
+        const price = data[0]?.attributes?.price;
+        const quantity = amount;
+        const stock = data[0]?.attributes.stock;
+        const product = { title, img, price, stock };
+
+        addToCart(id, color, quantity, product);
+    };
 
     return (
         <div className='product-info'>
@@ -67,19 +82,13 @@ const ProductInfo = ({ id }) => {
                     </div>
                     <div className="info">
                         <span>Colors : </span>
-                        <select name='colors' className='colors-input' id='colors'>
-                            <option value='red'>Red</option>
-                            <option value='green'>Green</option>
-                            <option value='Blue'>Blue</option>
-                            <option value='Black'>Black</option>
-                            <option value='White'>White</option>
-                        </select>
+                        {data[0]?.attributes.colors}
                     </div>
                     <hr />
                     <AmountButton amount={amount} increase={increase} decrease={decrease} />
                     <div className="add-cart">
                         <Link to='/cart' className='cart-btn'>
-                            <button>ADD TO CART</button>
+                            <button onClick={addCartItem}>ADD TO CART</button>
                         </Link>
                     </div>
                 </>

@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../styles/CartList.css';
-import { data } from '../utils/example';
 import CartItem from './CartItem';
+import { CartContext } from '../context/cart_context';
 
 const CartList = () => {
+    const { cart } = useContext(CartContext);
+
     return (
         <div className='cart-list'>
             <ul>
-                {data.map(item => {
+                {cart.map(item => {
                     return (
                         <li key={item.id}>
                             <CartItem 
-                                title={item.title} 
-                                image={item.img}
-                                price={item.price}
+                                item={item}
                             />
                         </li>
                     );

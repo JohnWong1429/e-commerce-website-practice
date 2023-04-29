@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LINKS } from '../utils/constants';
 import { FaCrown, FaTimes, FaBars } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import '../styles/NavBar.css';
+import { CartContext } from '../context/cart_context';
 
 
 
 const NavBar = () => {
     const [click, setClick] = useState(false);
+    const { total_items } = useContext(CartContext);
 
     return (
         <div className='navbar'>
@@ -32,7 +34,7 @@ const NavBar = () => {
                     <Link to='/cart' className='icon'>
                         <div className="nav-cartIcon">
                             <AiOutlineShoppingCart />
-                            <span>0</span>
+                            <span>{total_items}</span>
                         </div>
                     </Link>
                 </div>
