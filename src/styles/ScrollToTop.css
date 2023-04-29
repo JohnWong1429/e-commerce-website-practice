@@ -13,5 +13,13 @@
 @media screen and (max-width: 1300px) {
     .scroll-btn {
         right: 100px;
+        bottom: 200px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .scroll-btn {
+        right: 100px;
+        bottom: 20%;
     }
 }
