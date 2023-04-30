@@ -6,6 +6,7 @@ import SingleProduct from "./SingleProductPage";
 import Category from "./CategoryPage";
 import Contact from "./ContactPage";
 import Cart from "./CartPage";
+import Checkout from './CheckoutPage';
 
 export {
     Home,
@@ -16,4 +17,5 @@ export {
     Category,
     Contact,
     Cart,
+    Checkout,
 };

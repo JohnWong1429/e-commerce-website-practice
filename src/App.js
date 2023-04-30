@@ -9,6 +9,7 @@ import {
   Category,
   Contact,
   Cart,
+  Checkout,
 } from './pages';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -29,6 +30,7 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/product/:id' element={<SingleProduct />} />
         <Route path='/products/:id' element={<Category />} />
+        <Route path='/checkout' element={<Checkout />} />
         <Route path='/*' element={<Error />} />
       </Routes>
       <Footer />

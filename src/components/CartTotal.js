@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import '../styles/CartTotal.css';
 import { CartContext } from '../context/cart_context';
+import { Link } from 'react-router-dom';
 
 const CartTotal = () => {
     const { discount, total_amount, shipping_fee } = useContext(CartContext);
@@ -26,9 +27,11 @@ const CartTotal = () => {
                 </div>
             </div>
             <div className="bottom">
-                <button>
-                    LOGIN
-                </button>
+                <Link to='/checkout'>
+                    <button>
+                        Proceed to checkout
+                    </button>
+                </Link>
             </div>
         </div>
     );
