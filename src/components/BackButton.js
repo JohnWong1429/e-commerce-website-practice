@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/BackButton.css';
 
-const BackButton = ({ children }) => {
+const BackButton = ({ children, value }) => {
     const navigate = useNavigate();
 
     const back = () => {
-        navigate(-1);
+        navigate(value);
     }
 
 

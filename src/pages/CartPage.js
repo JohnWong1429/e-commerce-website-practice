@@ -15,7 +15,7 @@ const CartPage = () => {
             {cart.length ? (
                 <>
                     <div className="cart-btn">
-                        <BackButton>
+                        <BackButton value={'/products/1'}>
                             Go Shopping
                         </BackButton>
                     </div>

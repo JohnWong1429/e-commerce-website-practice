@@ -1,0 +1,87 @@
+.confirmCart {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    flex-direction: column;
+}
+
+.confirmCart .confirm {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+.confirmCart ul {
+    list-style: none;
+}
+
+.confirmCart li {
+    margin: 15px 0;
+}
+
+.confirmCart .confirmCart-item,
+.confirmCart .confirmCart-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 350px;
+}
+
+.confirmCart .confirmCart-item .title-quantity,
+.confirmCart .confirmCart-item .subtotal-price {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.confirmCart .confirmCart-item .subtotal-price,
+.confirmCart .confirmCart-total .total-price {
+    align-items: flex-end;
+}
+
+.confirmCart .confirmCart-item .title,
+.confirmCart .confirmCart-item .subtotal,
+.confirmCart .confirmCart-total .total-price {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.confirmCart .confirmCart-item .quantity,
+.confirmCart .confirmCart-item .price {
+    font-weight: 400;
+    color: gray;
+}
+
+.confirmCart .confirmCart-total {
+    gap: 365px;
+    margin-top: 15px;
+}
+
+.confirmCart .confirmCart-total .total-amount,
+.confirmCart .confirmCart-total .total-price {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.confirmCart .confirmCart-total .title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 992px) {
+    .confirmCart .confirmCart-item {
+        gap: 200px;
+    }
+
+    .confirmCart .confirmCart-total {
+        gap: 215px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .confirmCart .confirmCart-item {
+        gap: 80px;
+    }
+
+    .confirmCart .confirmCart-total {
+        gap: 95px;
+    }
+}

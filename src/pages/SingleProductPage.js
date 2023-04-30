@@ -11,7 +11,7 @@ const SingleProductPage = () => {
     return (
         <>
             <div className='back'>
-                <BackButton>
+                <BackButton value={-1}>
                     Back
                 </BackButton>
             </div>

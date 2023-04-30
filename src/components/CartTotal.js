@@ -28,7 +28,7 @@ const CartTotal = () => {
             </div>
             <div className="bottom">
                 <Link to='/checkout'>
-                    <button>
+                    <button className='checkout-btn'>
                         Proceed to checkout
                     </button>
                 </Link>

@@ -1,0 +1,16 @@
+h5 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 60px;
+    letter-spacing: 1px;
+}
+
+.checkout-back-btn {
+    margin: 50px 0 10px 25%;
+}
+
+@media screen and (max-width: 768px) {
+    .checkout-back-btn {
+        margin-left: 10%;
+    }
+}

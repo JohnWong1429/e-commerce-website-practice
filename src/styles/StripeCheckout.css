@@ -1,0 +1,28 @@
+.stripe-checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    gap: 50px;
+}
+
+.stripe-checkout .confirm .confirm-input,
+.stripe-checkout .confirm label {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.stripe-checkout .pay .pay-btn {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: bisque;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.stripe-checkout .pay .pay-btn:hover {
+    background-color: white;
+}

@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import StripeCheckout from '../components/StripeCheckout';
 import { CartContext } from '../context/cart_context';
 import { Link } from 'react-router-dom';
+import ConfirmCart from '../components/ConfirmCart';
+import '../styles/CheckoutPage.css';
+import BackButton from '../components/BackButton';
 
 const CheckoutPage = () => {
     const { cart } = useContext(CartContext);
@@ -9,6 +12,13 @@ const CheckoutPage = () => {
         <>
             {cart.length ? (
                 <>
+                    <div className="checkout-back-btn">
+                        <BackButton value={-1}>
+                            Back
+                        </BackButton>
+                    </div>
+                    <h5>Checkout Page</h5>
+                    <ConfirmCart />
                     <StripeCheckout />
                 </>
             ) : (
