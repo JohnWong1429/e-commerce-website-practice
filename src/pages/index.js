@@ -7,6 +7,7 @@ import Category from "./CategoryPage";
 import Contact from "./ContactPage";
 import Cart from "./CartPage";
 import Checkout from './CheckoutPage';
+import AfterPayment from "./AfterPaymentPage";
 
 export {
     Home,
@@ -18,4 +19,5 @@ export {
     Contact,
     Cart,
     Checkout,
+    AfterPayment,
 };

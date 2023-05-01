@@ -1,0 +1,13 @@
+.success-payment {
+    display: flex;
+    flex-direction: column;
+    margin: 250px 0;
+    gap: 20px;
+}
+
+.success-payment span {
+    margin: auto;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

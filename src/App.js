@@ -10,6 +10,7 @@ import {
   Contact,
   Cart,
   Checkout,
+  AfterPayment,
 } from './pages';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -31,6 +32,7 @@ function App() {
         <Route path='/product/:id' element={<SingleProduct />} />
         <Route path='/products/:id' element={<Category />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout/:id' element={<AfterPayment />} />
         <Route path='/*' element={<Error />} />
       </Routes>
       <Footer />
