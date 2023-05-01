@@ -34,10 +34,10 @@ const Footer = () => {
                     </div>
                     <div className="top-link-items">
                         <h2>Social Media</h2>
-                        <Link to='https://www.instagram.com/' target='_blank'>Instagram</Link>
-                        <Link to='https://zh-hk.facebook.com/' target='_blank'>Facebook</Link>
-                        <Link to='https://www.youtube.com/' target='_blank'>Youtube</Link>
-                        <Link to='https://twitter.com/' target='_blank'>Twitter</Link>
+                        <a href='https://www.instagram.com/' target='_blank' rel='noopener noreferrer'>Instagram</a>
+                        <a href='https://zh-hk.facebook.com/' target='_blank' rel='noopener noreferrer'>Facebook</a>
+                        <a href='https://www.youtube.com/' target='_blank' rel='noopener noreferrer'>Youtube</a>
+                        <a href='https://twitter.com/' target='_blank' rel='noopener noreferrer'>Twitter</a>
                     </div>
                 </div>            
             </div>
@@ -52,46 +52,51 @@ const Footer = () => {
                         RIW ® 2023. All Rights Reserved
                     </small>
                     <div className="social-icons">
-                        <Link 
+                        <a 
                             className="social-icon-link facebook"
-                            to='https://zh-hk.facebook.com/'
+                            href='https://zh-hk.facebook.com/'
                             target='_blank'
                             aria-label='Facebook'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-facebook-f"></i>
-                        </Link>
-                        <Link 
+                        </a>
+                        <a 
                             className="social-icon-link instagram"
-                            to='https://www.instagram.com/'
+                            href='https://www.instagram.com/'
                             target='_blank'
                             aria-label='Instagram'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-instagram"></i>
-                        </Link>
-                        <Link 
+                        </a>
+                        <a 
                             className="social-icon-link youtube"
-                            to='https://www.youtube.com/'
+                            href='https://www.youtube.com/'
                             target='_blank'
                             aria-label='Youtube'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-youtube"></i>
-                        </Link>
-                        <Link 
+                        </a>
+                        <a 
                             className="social-icon-link twitter"
-                            to='https://twitter.com/'
+                            href='https://twitter.com/'
                             target='_blank'
                             aria-label='Twitter'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-twitter"></i>
-                        </Link>
-                        <Link 
+                        </a>
+                        <a 
                             className="social-icon-link linkedin"
-                            to='https://www.linkedin.com/'
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             aria-label='LinkedIn'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-linkedin"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 <div className="right">

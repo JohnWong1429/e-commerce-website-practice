@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Contact.css';
-import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
@@ -21,46 +20,51 @@ const Contact = () => {
                 </div>
                 <div className="contact-right">
                     <div className="contact-social-icons">
-                        <Link
-                            to='https://zh-hk.facebook.com/'
+                        <a
+                            href='https://zh-hk.facebook.com/'
                             className='icon-link facebook'
                             target='_blank'
                             aria-label='Facebook'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-facebook"></i>
-                        </Link>
-                        <Link
-                            to='https://www.instagram.com/'
+                        </a>
+                        <a
+                            href='https://www.instagram.com/'
                             className='icon-link instagram'
                             target='_blank'
                             aria-label='Instagram'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-instagram"></i>
-                        </Link>
-                        <Link
-                            to='https://www.youtube.com/'
+                        </a>
+                        <a
+                            href='https://www.youtube.com/'
                             className='icon-link youtube'
                             target='_blank'
                             aria-label='Youtube'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-youtube"></i>
-                        </Link>
-                        <Link
-                            to='https://twitter.com/'
+                        </a>
+                        <a
+                            href='https://twitter.com/'
                             className='icon-link twitter'
                             target='_blank'
                             aria-label='Twitter'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-twitter"></i>
-                        </Link>
-                        <Link
-                            to='https://www.linkedin.com/'
+                        </a>
+                        <a
+                            href='https://www.linkedin.com/'
                             className='icon-link linkedin'
                             target='_blank'
                             aria-label='LinkedIn'
+                            rel='noopener noreferrer'
                         >
                             <i className="fab fa-linkedin"></i>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>
