@@ -12,6 +12,7 @@
     cursor: pointer;
 }
 
+.stripe-checkout .pay .pay-btn-disable,
 .stripe-checkout .pay .pay-btn {
     width: 100%;
     height: 40px;
@@ -25,4 +26,8 @@
 
 .stripe-checkout .pay .pay-btn:hover {
     background-color: white;
+}
+
+.stripe-checkout .pay .pay-btn-disable {
+    cursor: default;
 }

@@ -41,7 +41,7 @@ const StripeCheckout = () => {
             </div>
             <div className="pay">
                 <button 
-                    className='pay-btn' 
+                    className={confirm ? 'pay-btn' : 'pay-btn-disable' }
                     onClick={handlePayment}
                     disabled={!confirm}
                 >
