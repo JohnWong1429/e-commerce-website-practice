@@ -1,0 +1,10 @@
+.user-menu Button:hover {
+    background-color: antiquewhite;
+}
+
+
+
+.user-menu .user-icon {
+    color: black;
+    font-size: 1.5rem;
+}

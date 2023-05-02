@@ -59,6 +59,7 @@
     padding: 0.5rem 1rem;
     height: 100%;
     color: #000;
+    cursor: pointer;;
 }
 
 .nav-links:hover {
@@ -107,6 +108,11 @@
 
 .nav-icons .icon {
     color: black;
+}
+
+.navbar-item.logout,
+.navbar-item.login {
+    display: none;
 }
 
 @media screen and (max-width: 960px) {
@@ -166,5 +172,14 @@
         align-items: center;
         margin: 2rem auto;
         font-size: 1.5rem;
+    }
+
+    .nav-userIcon {
+        display: none;
+    }
+
+    .navbar-item.logout,
+    .navbar-item.login {
+        display: block;
     }
 }

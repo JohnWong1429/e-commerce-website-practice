@@ -5,12 +5,26 @@ import { FaCrown, FaTimes, FaBars } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import '../styles/NavBar.css';
 import { CartContext } from '../context/cart_context';
+import { UserContext } from '../context/user_context';
+import UserMenu from './UserMenu';
 
 
 
 const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
-    const { total_items } = useContext(CartContext);
+    const { total_items, clearCart } = useContext(CartContext);
+    const { myUser, logout, loginWithRedirect } = useContext(UserContext);
+
+    const log_in = () => {
+        setShowMenu(false);
+        loginWithRedirect();
+    };
+
+    const log_out = () => {
+        setShowMenu(false);
+        logout();
+        clearCart();
+    };
 
     return (
         <div className='navbar'>
@@ -29,6 +43,19 @@ const NavBar = () => {
                             </Link>
                         </li>
                     ))}
+                    {myUser ? (
+                        <li className='navbar-item logout'>
+                            <div className='nav-links' onClick={log_out}>
+                                Logout
+                            </div>
+                        </li>
+                    ) : (
+                        <li className='navbar-item login'>
+                            <div className="nav-links" onClick={log_in}>
+                                Login
+                            </div>
+                        </li>
+                    )}
                 </ul>
                 <div className="nav-icons">
                     <Link to='/cart' className='icon' onClick={() => setShowMenu(false)}>
@@ -37,6 +64,9 @@ const NavBar = () => {
                             <span>{total_items}</span>
                         </div>
                     </Link>
+                    <div className="nav-userIcon">
+                        <UserMenu />
+                    </div>
                 </div>
             </div>
         </div>
