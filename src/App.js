@@ -16,6 +16,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import './styles/App.css';
 import ScrollToTop from './components/ScrollToTop';
+import PrivateRoute from './pages/PrivateRoute';
 
 function App() {
 
@@ -31,7 +32,11 @@ function App() {
         <Route path='/cart' element={<Cart />} />
         <Route path='/product/:id' element={<SingleProduct />} />
         <Route path='/products/:id' element={<Category />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout' element={
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        } />
         <Route path='/checkout/:id' element={<AfterPayment />} />
         <Route path='/*' element={<Error />} />
       </Routes>
