@@ -1,0 +1,17 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    margin: 250px 0;
+    gap: 20px;
+}
+
+.error-page h1 {
+    margin: auto;
+}
+
+.error-page span {
+    margin: auto;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
